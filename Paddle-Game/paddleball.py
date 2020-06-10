@@ -22,7 +22,7 @@ class Ball:
     if pos[1] <= 0:
       self.y =3
     if pos[3] >= self.canvas_height:
-      self.hit_bottom = True
+      self.y = -3
     if self.hit_paddle(pos) ==True:
       self.y = -3
     if pos[0] <= 0:
@@ -63,7 +63,7 @@ class Paddle:
 
 tk = Tk()
 tk.title("My Game")
-#tk.resizeable(0,0)
+tk.resizeable(0,0)
 tk.wm_attributes("-topmost",1)
 canvas = Canvas(tk, width = 500, height = 400, bd =0, highlightthickness = 0)
 canvas.pack()
@@ -72,7 +72,7 @@ tk.update()
 paddle = Paddle(canvas,"blue")
 ball = Ball(canvas,paddle,"red")
 
-while 1:
+while True:
   if ball.hit_bottom ==False:
     ball.draw()
     paddle.draw()
