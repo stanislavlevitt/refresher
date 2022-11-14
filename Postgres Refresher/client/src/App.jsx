@@ -4,13 +4,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
-import Routes from "./Routes";
+import RouteLinks from "./Routes";
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Routes />
+      <RouteLinks />
     </Router>
   );
 }
