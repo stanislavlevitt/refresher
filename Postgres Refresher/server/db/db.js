@@ -1,9 +1,7 @@
 const Sequelize = require('sequelize')
 
-const databaseName = 'testdb'
-
 const db = new Sequelize(
-  process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`,
+  process.env.DATABASE_URL || `postgresql://postgres:ZKaLykrDoIxBEBdvtCYA@containers-us-west-98.railway.app:5525/railway`,
   {
     logging: false
   }

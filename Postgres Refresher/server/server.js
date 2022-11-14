@@ -11,7 +11,7 @@ module.exports = app
 const createApp = () => {
 
   const corsOptions = {
-    origin: 'http://localhost:8081'
+    origin: '*'
   }
 
   app.use(cors(corsOptions))
