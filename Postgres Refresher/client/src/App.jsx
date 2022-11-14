@@ -1,31 +1,18 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+import Navbar from "./components/Navbar";
+import Routes from "./Routes";
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [data, setData] = useState()
-
-  useEffect(()=>{
-    const fetchMethod = async ()=>{
-     const res =  await fetch(`http://localhost:8080/api/tutorials`)
-     const data = await res.json()
-     console.log(data)
-     setData(data)
-    }
-    fetchMethod()
-  }, [])
-
-
   return (
-    <div className="App">
-      <div>
-      <p className="read-the-docs">
-        Return data
-        {JSON.stringify(data)}
-      </p>
-    </div>
-    </div>
-  )
+    <Router>
+      <Navbar />
+      <Routes />
+    </Router>
+  );
 }
 
-export default App
+export default App;
